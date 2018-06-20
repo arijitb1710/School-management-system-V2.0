@@ -1,0 +1,100 @@
+best color palette for web design
+https://coolors.co/browser/latest/1
+
+animating slides
+--------------------------------------
+animate top
+w3-animate-top{
+position:relative;
+animation:animatetop 0.4s}
+
+@keyframes animatetop{
+from{top:-300px;opacity:0} 
+to{top:0;opacity:1}}
+------------------------------------------
+animate left
+w3-animate-left{
+position:relative;
+animation:animateleft 0.4s}
+@keyframes animateleft{
+    from{left:-300px;opacity:0} 
+    to{left:0;opacity:1}}
+----------------------------------------------
+
+animate right
+w3-animate-right{
+    position:relative;
+    animation:animateright 0.4s}
+    @keyframes animateright{
+        from{right:-300px;opacity:0} 
+        to{right:0;opacity:1}}
+
+------------------------------------------------
+animate bottom
+.w3-animate-bottom{
+    position:relative;
+    animation:animatebottom 0.4s}
+@keyframes animatebottom{
+    from{bottom:-300px;opacity:0} 
+    to{bottom:0;opacity:1}}
+
+animate fading
+w3-animate-fading{
+    animation:fading 10s infinite}
+    @keyframes fading{
+        0%{opacity:0}
+        50%{opacity:1}
+        100%{opacity:0}}
+
+-------------------------------------------------
+
+<div id="main-content-left">
+        <div class="submain-content" style="background: url('./images/admin.png') ; background-size: cover;"></div>
+         <div class="submain-content"></div>
+    </div>  
+    <div id="main-content-right">
+        <div class="submain-content"  style="background: url('./images/employee.png') ; background-size: cover;"></div>
+        <div class="submain-content" style="background: url('./images/student.png') ; background-size: cover;"></div>
+    </div>
+
+
+    //Session handling in HTML
+        //Setting session variable in script.js
+        $("#Username").blur(function(){
+        var val = $("#Username").val();
+        if (window.sessionStorage) {
+            sessionStorage.setItem("session_username", val);
+        }
+
+        //Getting session variable in class-level-script.js
+            //Session Handling , if username is equal to null , redirects to login page
+                var s_username=sessionStorage.getItem("session_username");
+                 console.log("s_username:"+s_username);
+                 if(s_username === null)
+                        {
+                                window.location.replace("login.html");
+                        }
+
+//Date time picker
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+</head>
+<body>
+ 
+<p>Date: <input type="text" id="datepicker"></p>
+ 
+ 
+</body>
+</html>

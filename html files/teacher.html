@@ -1,0 +1,244 @@
+<html>
+        <title>Teacher</title>
+            <head>
+                <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+                <link rel="stylesheet" href="css/teacher.css"> 
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                <script src="js/teacher.js"></script>
+                </head>
+            <body style="background-color: white;margin: 0;padding: 0">
+            <div style="width:100%;height: 70px;background:black">
+                
+                <a class="header-links" href="home.html"style="margin-left: 1140px;">Home</a>
+                <a class="header-links" href="login.html"style="margin-left: 1200px;">Logout</a>
+            </div>
+            <div style="width:100%;height: 58px;background:green">
+                <ul id="top-nav-list">
+                    <li id="syllabus" style="width: 200px">SYLLABUS
+                            <!-- <ul class="top-nav-ul">
+                                <li id="add-users"style="margin-top:6px;width: 200px"><a>ADD</a></li>
+                                <li id="remove-users"style="width: 200px"><a>UPDATE</a></li>
+                             </ul> -->
+                    </li>
+                    <li id="lesson_plan">LESSON PLAN</li>
+                    <li id="results">RESULTS</li>
+                    <li id="le">LEAVES
+                        <ul class="top-nav-ul">
+                                <li id="leaves"style="margin-top:6px;width: 200px"><a>APPLY LEAVES</a></li>
+                                <li id="view-leave"style="width: 200px"><a>VIEW LEAVES</a></li>
+                        </ul> 
+                    </li>
+                    <li id="student" style="width:200px;">STUDENT RECORD
+                        <!-- <ul class="top-nav-ul">
+                            <li style="margin-top:6px;width: 200px">ADD RECORD</li>
+                            <li style="width: 200px">DELETE RECORD</li>
+                            <li style="width: 200px">UPDATE RECORD</li>
+                        </ul> -->
+                    </li>
+                    <li id="leave" style="border-right: none">APPROVE LEAVE</li>
+                </ul>
+            </div>  
+            <div class="main-content">
+                <div id="add-syllabus" hidden>
+                    <input id="class" type="text" list="classes"class="syllabus" style="margin-left:8px" placeholder="Class">
+                    <datalist id="classes">
+                        <option value="I">
+                        <option value="II"> 
+                        <option value="III">
+                        <option value="IV">
+                        <option value="V">
+                      </datalist>
+                    <input id="section" type="text" list="sections" class="syllabus" style="margin-left:8px" placeholder="Section">
+                    <datalist id="sections">
+                            <option value="A">
+                            <option value="B">
+                    </datalist>
+                    <input id="subject" type="text" list="subjects" class="syllabus" style="margin-left:8px" placeholder="Subject">
+                    <datalist id="subjects">
+                            <option value="English">
+                            <option value="Bengali">
+                            <option value="Science">
+                            <option value="Physics">
+                            <option value="Chemistry">
+                            <option value="Biology">    
+                          </datalist>
+                    <button id="search" class="button-syllabus">Search</button>
+                    <button id="add" class="button-syllabus" hidden>Add new Syllabus</button>
+                </div>
+                <div id="existing-syllabus" style="width:50%;height: 50%;margin: auto;margin-top:50px;" hidden>
+                    <div style="width: 100%;height: 50px;text-align: center" id="r_subject" class="div-syl"></div>
+                    <div style="width: 100%;height: 100px;" id="r_syllabus" class="div-syl" hidden></div>
+                </div>
+                <div id="new-syllabus" hidden>
+                 <input type="text" list="classes" class="new-syl" placeholder="Add Class"> 
+                 <datalist id="classes">
+                        <option value="I">
+                        <option value="II"> 
+                        <option value="III">
+                        <option value="IV">
+                        <option value="V">
+                </datalist>
+                 <input id="new-syl-section" type="text" list="sections" class="new-syl" placeholder="Add Section"> 
+                 <datalist id="sections">
+                        <option value="A">
+                        <option value="B">
+                </datalist>
+                 <input id="new-syl-subject" type="text" list="subjects" class="new-syl" placeholder="Add Subject"> 
+                 <datalist id="subjects">
+                        <option value="English">
+                        <option value="Bengali">
+                        <option value="Science">
+                        <option value="Physics">
+                        <option value="Chemistry">
+                        <option value="Biology">    
+                      </datalist>
+                 <textarea id="" style="height:30%"class="new-syl" maxlength="5000">Enter Syllabus here</textarea>  
+                 <button style="width: 100% ; height: 50px; background-color: black;color:white;border-radius: 5px;cursor:pointer">Submit</button>
+                </div>
+                <!-- Results Div main -->
+                <div id="main-marks" hidden>
+                    <!-- search bar for sarching results -->
+                    <div id="search-marks" >
+                            <input type="text" class="search-res syllabus"  placeholder="Name">
+                            <input type="text" list="classes"class="search-res syllabus" placeholder="Class">
+                            <datalist id="classes">
+                                <option value="I">
+                                <option value="II"> 
+                                <option value="III">
+                                <option value="IV">
+                                <option value="V">
+                              </datalist>
+                            <input type="text" list="sections" class="search-res syllabus"placeholder="Section">
+                            <datalist id="sections">
+                                    <option value="A">
+                                    <option value="B">
+                            </datalist>
+                            <!-- <input type="text" list="terms" class="search-res syllabus"placeholder="Term">
+                            <datalist id="terms">
+                                    <option value="I">
+                                    <option value="II">
+                                    <option value="III">
+                                  </datalist> -->
+                            <input type="text" class="search-res syllabus" placeholder="Roll No">
+                            <button class="search-res button-syllabus">View Result</button>
+
+
+                    </div>
+                    <!-- ADD RESULTS DIV -->
+                    <div id="myadd-results" hidden>
+                            <input type="text" class="search-res-child search-res syllabus"  placeholder="Term">
+                            <input type="text" class="search-res-child search-res syllabus"  placeholder="Subject">
+                            <input type="text" class="search-res-child search-res syllabus"  placeholder="Mark">
+                            <button class=" search-res-child search-res button-syllabus">Add</button>
+                    </div>
+                    <!-- VIEW RESULTS DIV -->
+                    <div id="myview-results" hidden >
+                        <div id="res1" class="view-res"> 
+                            <div class='headers'><p>Term1</p><a class="add add-update"style="margin-left:250px">Add row</a><a class="add-update">Update</a></div>
+                            <div id="res1-marks"></div>
+                        </div>
+                        <div id="res2" class="view-res" >
+                                <div class='headers'><p>Term2</p><a class="add add-update"style="margin-left:250px">Add row</a><a class="add-update">Update</a></div>
+                                <div id="res2-marks"></div>
+                        </div>
+                        <div id="res3" class="view-res">
+                                <div class='headers'><p>Term3</p><a class="add add-update"style="margin-left:250px">Add row</a><a class="add-update">Update</a></div>
+                                <div id="res3-marks"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- DIV MAIN FOR STUDENT RECORDS -->
+                <div id="stu" hidden>
+                    <div id="search-stu" >
+                        <input type="text" class="search-res syllabus"  placeholder="Name">
+                        <input type="text" class="search-res syllabus"  placeholder="Surname">
+                        <input type="text" list="classes"class="search-res syllabus" placeholder="Class">
+                        <datalist id="classes">
+                            <option value="I">
+                            <option value="II"> 
+                            <option value="III">
+                            <option value="IV">
+                            <option value="V">
+                          </datalist>
+                        <input type="text" list="sections" class="search-res syllabus"placeholder="Section">
+                        <datalist id="sections">
+                                <option value="A">
+                                <option value="B">
+                        </datalist>
+                        <!-- <input type="text" list="terms" class="search-res syllabus"placeholder="Term">
+                        <datalist id="terms">
+                                <option value="I">
+                                <option value="II">
+                                <option value="III">
+                              </datalist> -->
+                        <input type="text" class="search-res syllabus" placeholder="Roll No">
+                        <button class="search-res button-syllabus">Search Student</button>
+                        <button style="margin-left:1030px; margin-top: 15px"class="search-res button-syllabus" hidden>Add Student</button>
+
+                </div> 
+                <div id="add-student" hidden>
+                    <input type="text" placeholder="Name" class="add-stu">
+                    <input type="text" placeholder="Surname" class="add-stu">
+                    <input type="text" placeholder="Id" class="add-stu">
+                    <input type="text" placeholder="Class" class="add-stu">
+                    <input type="text" placeholder="Section" class="add-stu">
+                    <input type="text" placeholder="Roll" class="add-stu">
+                    <input type="text" placeholder="Parents Contact number" class="add-stu">
+                    <input type="text" placeholder="Guardians contact number" class="add-stu">
+                    <input type="text" placeholder="Parents email" class="add-stu">
+                    <input type="text" placeholder="Address : Max 200 characters" class="add-stu">
+                    <button>Save</button>
+                </div>
+                    
+                </div>
+                <!-- DIV FOR APPLYING LEAVES -->
+                <div id="leave-apply" >
+                     <div id="search-stu" >
+                         <div style="margin-left: 1%">
+                            <input type="text" placeholder="Name" class="search-res syllabus" >
+                            <input type="text" placeholder="Surname" class="search-res syllabus" >
+                            <input type="text" placeholder="Choose role" list="role" class="search-res syllabus" >
+                            <datalist id="role">
+                            <option value="Teacher">   
+                            </datalist>
+                            <input type="text" id="datepicker1" placeholder="Choose From date" class="search-res syllabus" >
+                            <input type="text" id="datepicker2" placeholder="Choose To date" class="search-res syllabus" >
+                            <button class="search-res button-syllabus">Apply Leave</button>
+                        </div>
+                        <p hidden style="text-align: center;font-weight: bold;font-family: Verdana;color: green">Leave has been applied successfully!</p>
+                    </div>
+                </div>
+
+                <!-- DIV for viewing leaves -->
+                <div id="leave-view" hidden>
+                        <div id="search-stu" >
+                            <div style="margin-left: 30%">
+                               <input type="text" placeholder="Name" class="search-res syllabus" >
+                               <input type="text" placeholder="Surname" class="search-res syllabus" >
+                               <button class="search-res button-syllabus">View Leave</button>
+                           </div>
+                           <p hidden style="text-align: center;font-weight: bold;font-family: Verdana;color: green">Leave has been applied successfully!</p>
+                       </div>
+                       <table id="leave-detail" style="width: 100%" hidden>
+                            <thead>
+                                    <tr>
+                                      <th scope="col">Name</th>
+                                      <th scope="col">Surname</th>
+                                      <th scope="col">Role</th>
+                                      <th scope="col">From Date</th>
+                                      <th scope="col">To Date</th>
+                                      <th scope="col">Status</th>
+                                    </tr>
+                                  </thead>
+                        <tbody></tbody>
+                    </table>
+                   </div>
+
+            </div>
+                  
+                  
+            
+            <footer class="footer"></footer>
+        </body>
+</html>
